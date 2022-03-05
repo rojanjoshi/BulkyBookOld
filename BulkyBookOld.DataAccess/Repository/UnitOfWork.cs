@@ -1,13 +1,13 @@
-﻿using BulkyBookOld.DataAccess.Repository.IRepository;
+﻿
+using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBookOld.DataAccess;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace BulkyBookOld.DataAccess.Repository
+namespace BulkyBook.DataAccess.Repository
 {
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _db;
 

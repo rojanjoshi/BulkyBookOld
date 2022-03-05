@@ -1,6 +1,7 @@
+using BulkyBook.DataAccess.Repository;
+using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBookOld.DataAccess;
-using BulkyBookOld.DataAccess.Repository;
-using BulkyBookOld.DataAccess.Repository.IRepository;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

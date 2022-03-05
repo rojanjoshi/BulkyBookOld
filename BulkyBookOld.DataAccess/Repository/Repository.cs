@@ -1,16 +1,18 @@
-﻿using BulkyBookOld.DataAccess.Repository.IRepository;
+﻿
+using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBookOld.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace BulkyBookOld.DataAccess.Repository
+namespace BulkyBook.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
+
         private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
 
@@ -25,8 +27,6 @@ namespace BulkyBookOld.DataAccess.Repository
             dbSet.Add(entity);
         }
 
-     
-
         public T Get(int id)
         {
             return dbSet.Find(id);
@@ -36,12 +36,12 @@ namespace BulkyBookOld.DataAccess.Repository
         {
             IQueryable<T> query = dbSet;
 
-            if (filter != null)
+            if(filter != null)
             {
                 query = query.Where(filter);
             }
 
-            if (includeProperties != null)
+            if(includeProperties != null)
             {
                 foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
@@ -73,7 +73,7 @@ namespace BulkyBookOld.DataAccess.Repository
                 }
             }
 
-
+            
             return query.FirstOrDefault();
         }
 
