@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using BulkyBookOld.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BulkyBookOld.DataAccess
@@ -9,5 +10,6 @@ namespace BulkyBookOld.DataAccess
             : base(options)
         {
         }
+        public DbSet<Category> Categories { get; set; }
     }
 }
